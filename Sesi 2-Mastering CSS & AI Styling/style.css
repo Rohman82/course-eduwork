@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+section {
+  border-bottom: 3px solid #000000;
+  padding: 20px;
+}
+
+/* Warna aksen biru buat judul-judul section */
+section h2 {
+  color: #2563eb;
+}
+
+/* Tombol "Pelajari Selengkapnya" dikasih warna */
+button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Label biodata dikasih warna beda dari value */
+.biodata-item strong {
+  color: #2563eb;
+}
+
+/* HEADER */
+nav {
+  background-color: #1a1a2e;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav .brand {
+  color: #fff;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #f39c12;
+}
+
+/* HERO */
+section:first-of-type {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 10px;
+}
+
+section:first-of-type > div {
+  flex: 1;
+}
+
+section:first-of-type img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ABOUT */
+section:nth-of-type(2) h2 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+section:nth-of-type(2) p {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.biodata-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.biodata-item {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* PORTFOLIO */
+section:last-of-type {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* biar card ngumpul ke tengah */
+  gap: 20px;
+  padding: 20px;
+}
+
+section:last-of-type h2 {
+  width: 100%; /* biar judul "Portfolio" tetap di baris sendiri */
+}
+
+section:last-of-type > div {
+  flex: 1 1 250px; /* boleh grow & shrink, basis 250px */
+  max-width: 350px; /* tapi nggak boleh lebih dari ini */
+  border: 1px solid #000;
+  padding-bottom: 10px;
+}
+
+section:last-of-type img {
+  width: 100%;
+  height: 180px; /* dikurangin dari 200px */
+  object-fit: cover;
+  display: block;
+  padding: 10px;
+}
+
+/* RESPONSIVE - Tablet & HP */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav ul {
+    gap: 15px;
+  }
+
+  section:first-of-type {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .biodata-grid {
+    grid-template-columns: 1fr;
+  }
+
+  section:last-of-type > div {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  section:first-of-type > div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
